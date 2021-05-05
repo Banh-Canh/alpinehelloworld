@@ -44,6 +44,20 @@ pipeline {
 				}
 			}
 		}
+		stage('Push image on dockerhub') {
+			agent any 
+			environment {
+				DOCKERHUB_SECRET = credentials('dockerhub_secret')
+			}
+			steps {
+				script {
+					sh '''
+					docker login --username ${DOCKERHUB_SECRET_USR} --password ${DOCKERHUB_SECRET_PSW}
+					docker push ${DOCKERHUB_LOGIN}/${IMAGE_NAME}:${IMAGE_TAG}
+					'''
+				}
+			}
+		}
 		stage('Push image in staging and deploy it') {
 			when {
 				expression { GIT_BRANCH == 'origin/master' }
