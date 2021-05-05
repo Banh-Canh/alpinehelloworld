@@ -29,7 +29,8 @@ pipeline {
 			steps {
 				script {
 					sh '''
-						curl http://172.17.0.1 | grep -q "Hello world"
+						var=$(curl http://172.17.0.1:5000)
+						if [ "$var" = "Hello world!" ]; then; exit 0; else exit 1; fi
 					'''
 				}
 			}
@@ -38,7 +39,7 @@ pipeline {
 			agent any
 			steps {
 				script {
-					sh 'docker rm -f ${IMAGE_NAME}
+					sh 'docker rm -f ${IMAGE_NAME}'
 				}
 			}
 		}
