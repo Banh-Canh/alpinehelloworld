@@ -77,6 +77,18 @@ pipeline {
 				}
 			}
 		}
+                stage('Test Container Staging') {
+                        agent any
+                        steps {
+                                script {
+                                        sh '''
+                                            sleep 5
+                                                var=$(curl https://victor-staging.herokuapp.com)
+                                                if [ "$var" = 'Hello world!' ]; then exit 0; else exit 1; fi
+                                        '''
+                                }
+                        }
+                }
 		stage('Push image in production and deploy it') {
 			when {
 				expression { GIT_BRANCH == 'origin/master' }
@@ -96,5 +108,17 @@ pipeline {
 				}
 			}
 		}
+                stage('Test Container Prod') {
+                        agent any
+                        steps {
+                                script {
+                                        sh '''
+                                            sleep 5
+                                                var=$(curl https://victor-production.herokuapp.com)
+                                                if [ "$var" = 'Hello world!' ]; then exit 0; else exit 1; fi
+                                        '''
+                                }
+                        }
+                }
 	}
 }
