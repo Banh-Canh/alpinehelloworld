@@ -20,7 +20,7 @@ pipeline {
 			agent any
 			steps {
 				script {
-					sh 'docker run -it --name ${IMAGE_NAME} -p 5000:5000 -d -e PORT=5000 ${DOCKERHUB_LOGIN}/${IMAGE_NAME}:${TAG_NAME}'
+					sh 'docker run -it --name ${IMAGE_NAME} -p 5000:5000 -d -e PORT=5000 ${DOCKERHUB_LOGIN}/${IMAGE_NAME}:${IMAGE_TAG}'
 				}
 			}
 		}
