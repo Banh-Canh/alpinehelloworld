@@ -29,8 +29,7 @@ pipeline {
 			steps {
 				script {
 					sh '''
-						var=$(curl http://172.17.0.1:5000)
-						if [ "$var" = "Hello world!" ]; then exit 0; else exit 1; fi
+						curl http://172.17.0.1 | grep -q "Hello world"
 					'''
 				}
 			}
