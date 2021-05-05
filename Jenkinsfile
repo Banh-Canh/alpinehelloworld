@@ -39,7 +39,7 @@ pipeline {
 			steps {
 				script {
 					sh 'docker rm -f ${IMAGE_NAME}
-				}	
+				}
 			}
 		}
 		stage('Push image in staging and deploy it') {
