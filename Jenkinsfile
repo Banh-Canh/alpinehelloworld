@@ -31,7 +31,7 @@ pipeline {
 					sh '''
 					    sleep 5
 						var=$(curl http://172.17.0.1:5000)
-						if [ "$var" = 'Hello world!' ]; then echo 0; else echo 1; fi
+						if [ "$var" = 'Hello world!' ]; then exit 0; else exit 1; fi
 					'''
 				}
 			}
