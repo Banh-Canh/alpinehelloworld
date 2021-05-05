@@ -83,7 +83,7 @@ pipeline {
                                 script {
                                         sh '''
                                             sleep 5
-                                                var=$(curl https://victor-staging.herokuapp.com)
+                                                var=$(curl https://$STAGING.herokuapp.com)
                                                 if [ "$var" = 'Hello world!' ]; then exit 0; else exit 1; fi
                                         '''
                                 }
@@ -114,7 +114,7 @@ pipeline {
                                 script {
                                         sh '''
                                             sleep 5
-                                                var=$(curl https://victor-production.herokuapp.com)
+                                                var=$(curl https://$PRODUCTION.herokuapp.com)
                                                 if [ "$var" = 'Hello world!' ]; then exit 0; else exit 1; fi
                                         '''
                                 }
