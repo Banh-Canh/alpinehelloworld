@@ -44,7 +44,7 @@ pipeline {
 			agent any
 			steps {
 				script {
-					sh 'docker rm -fv ${IMAGE_NAME}
+					sh 'docker rm -f ${IMAGE_NAME}
 				}	
 			}
 		}
