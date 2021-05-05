@@ -29,8 +29,9 @@ pipeline {
 			steps {
 				script {
 					sh '''
+					    sleep 5
 						var=$(curl http://172.17.0.1:5000)
-						if [ '$var' = 'Hello world!' ]; then exit 0; else exit 1; fi
+						if [ "$var" = 'Hello world!' ]; then echo 0; else echo 1; fi
 					'''
 				}
 			}
@@ -69,14 +70,14 @@ pipeline {
 			agent any
 			environment {
 				HEROKU_API_KEY = credentials('heroku_api_key')
-			}
+			}  
 			steps {
 				script {
 					sh '''
-						heroku container:login
-						heroku create $PRODUCTION || echo "project already exist"
-						heroku container:push -a $PRODUCTION web
-						heroku container:release -a $PRODUCTION web
+					heroku container:login
+					heroku create $PRODUCTION || echo "project already exist"
+					heroku container:push -a $PRODUCTION web
+					heroku container:release -a $PRODUCTION web
 					'''
 				}
 			}
