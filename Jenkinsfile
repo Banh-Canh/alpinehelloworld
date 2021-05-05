@@ -29,8 +29,8 @@ pipeline {
 			steps {
 				script {
 					sh '''
-					var=$(curl http://172.17.0.1:5000)
-					if [ "$var" = "Hello world!" ]; then exit 0; else exit 1; fi 
+						var=$(curl http://172.17.0.1:5000)
+						if [ "$var" = "Hello world!" ]; then exit 0; else exit 1; fi 
 					'''
 				}
 			}
@@ -73,10 +73,10 @@ pipeline {
 			steps {
 				script {
 					sh '''
-					heroku container:login
-					heroku create $PRODUCTION || echo "project already exist"
-					heroku container:push -a $PRODUCTION web
-					heroku container:release -a $PRODUCTION web
+						heroku container:login
+						heroku create $PRODUCTION || echo "project already exist"
+						heroku container:push -a $PRODUCTION web
+						heroku container:release -a $PRODUCTION web
 					'''
 				}
 			}
