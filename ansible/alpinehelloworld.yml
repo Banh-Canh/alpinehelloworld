@@ -1,0 +1,23 @@
+---
+- name: "alpinehelloworld installation"
+  hosts: prod
+  tasks:
+    - name: Create default containers
+      docker_container:
+        name: "alpinehelloworld"
+        image: "banhcanh/alpinehelloworld"
+        ports: 80:5000
+        env:
+          PORT=5000
+      vars:
+        ansible_python_interpreter: /usr/bin/python3
+    - name: "Allow http connection"
+      firewalld:
+        service: "http"
+        permanent: yes
+        immediate: yes
+        state: "enabled"
+      become: yes
+      vars:
+        ansible_python_interpreter: /usr/bin/python
+...
