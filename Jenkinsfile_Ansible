@@ -1,5 +1,12 @@
 pipeline {
-        agent none
+	environment {
+		IMAGE_NAME = "alpinehelloworld"
+		IMAGE_TAG = "latest"
+		STAGING = "victor-staging"
+		PRODUCTION = "victor-production"
+		DOCKERHUB_LOGIN = "banhcanh"
+	}
+	agent none
 	stages {
 		stage('Build image') {
 			agent any
