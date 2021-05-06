@@ -51,7 +51,7 @@ pipeline {
 				}
 			}
 		}
-		stage('Build image') {
+		stage('Ansible deploy') {
 			agent { 
 				docker {
 						image 'registry.gitlab.com/robconnolly/docker-ansible:latest' 
