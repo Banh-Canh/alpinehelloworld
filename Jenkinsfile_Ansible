@@ -20,5 +20,22 @@ pipeline {
 				}
 			}
 		}
+		stage('Tests Availability') {
+                        agent {
+                                docker {
+                                                image 'registry.gitlab.com/robconnolly/docker-ansible:latest'
+                                }
+                        }
+                        steps {
+                                script {
+                                        sh '''
+                                                apt update
+                                                apt install software-properties-common -y
+                                                apt install sshpass -y
+                                                ansible-playbook -i ansible/prod.yml test.yml
+                                        '''
+                                }
+                        }
+                }
 	}
 }
