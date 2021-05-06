@@ -3,9 +3,9 @@ pipeline {
 	stages {
 		stage('Build image') {
 			agent { 
-					docker {
+				docker {
 						image 'registry.gitlab.com/robconnolly/docker-ansible:latest' 
-					} 
+				} 
 			}
 			steps {
 				script {
