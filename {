@@ -1,54 +1,0 @@
-Script started on Thu 06 May 2021 04:00:26 PM CEST
-                                        sh '''
-                                                apt update
-                                                apt install software-properties-common -y
-                                                apt install sshpass -y
-                                                cd ansible
-                                                ansible-playbook -i prod.yml install-docker.yml
-                                                ansible-playbook -i prod.yml alpinehelloworld.yml
-                                        '''
-                                }
-                        }
-                }]0;centos@jenkins:~/alpinehelloworld[?1034h[centos@jenkins alpinehelloworld]$                                         sh '''
->                                                 apt update
->                                                 apt install software-properties-common -y
->                                                 apt install sshpass -y
->                                                 cd ansible
->                                                 ansible-playbook -i prod.yml install-docker.yml
->                                                 ansible-playbook -i prod.yml alpinehelloworld.yml
->                                         '''
-sh: 
-                                                apt update
-                                                apt install software-properties-common -y
-                                                apt install sshpass -y
-                                                cd ansible
-                                                ansible-playbook -i prod.yml install-docker.yml
-                                                ansible-playbook -i prod.yml alpinehelloworld.yml
-                                        : File name too long
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$                                 }
-bash: syntax error near unexpected token `}'
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$                         }
-bash: syntax error near unexpected token `}'
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$                 }^C
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$                         }        }^C
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$ ^C
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$                         }        }^C
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$ ^C
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$ ^C
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$ ^C
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$ ^C
-]0;centos@jenkins:~/alpinehelloworld[centos@jenkins alpinehelloworld]$ fe[K[K                        }        }        sh '''
-                                                apt update
-                                                apt install software-properties-common -y
-                                                apt install sshpass -y
-                                                cd ansible
-                                                ansible-playbook -i prod.yml install-docker.yml
-                                                ansible-playbook -i prod.yml alpinehelloworld.yml
-                                        '''[A[A[A[A[A[A[A[7Pansible-playbook -i prod.yml mario.yml 
-[K
-[K
-[K
-[K
-[K
-[K
-[K[A[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9@install-docker[C[C[C[C[C[9P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[
