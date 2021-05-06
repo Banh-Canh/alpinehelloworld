@@ -10,6 +10,9 @@ pipeline {
 			steps {
 				script {
 					sh '''
+                                                apt update
+                                                apt install software-properties-common -y
+                                                apt install sshpass -y
 						cd ansible
 						ansible-playbook -i prod.yml install-docker.yml
 						ansible-playbook -i prod.yml alpinehelloworld.yml
